@@ -1,0 +1,592 @@
+# Translation of Themes - The Bootstrap in German
+# This file is distributed under the same license as the Themes - The Bootstrap package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-03-01 12:45:27+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: de\n"
+"Project-Id-Version: Themes - The Bootstrap\n"
+
+#. Description of the plugin/theme
+msgid "A WordPress Theme based on Bootstrap, from Twitter. It features a 100% responsive layout, a superb gallery and image handling with a custom image meta widget and carousel for gallery post-formats, the Glyphicon Icon set, a clean and simple design and a lot more! The Bootstrap runs on HTML5 and CSS3, a 12-column grid and comes with custom jQuery plugins. See the Bootstrap documentation on GitHub for reference."
+msgstr "Ein WordPress Theme basierend auf Twitter Bootstrap. Es kommt mit 100% responsive Layout, einem superben Umgang mit Galerien und Bildern, einem eigenen Bilder Meta Widget, Karussell  für Galerie Beiträge, dem Glyphicon set, einem sauberen und einfachen Design, und noch vieles mehr! The Bootstrap verwended HTML5 und CSS3, ein zwölf-spaltiges Grid, und einigen eigenen jQuery Plugins. Siehe auch die Bootstrap Referenz auf GitHub."
+
+#. Theme Name of the plugin/theme
+msgid "The Bootstrap"
+msgstr "The Bootstrap"
+
+#. Template Name of the plugin/theme
+msgid "Full Width"
+msgstr "Vollständige Breite"
+
+#: tag.php:23
+msgid "Tag Archives: %s"
+msgstr "Schlagwort-Archive: %s"
+
+#: single.php:28
+msgid "Previous Post"
+msgstr "Vorheriger Beitrag"
+
+#: single.php:27
+msgid "Next Post"
+msgstr "Nächster Beitrag"
+
+#: single.php:26
+msgid "Post navigation"
+msgstr "Artikel-Navigation"
+
+#: searchform.php:15
+msgid "Go"
+msgstr "Los"
+
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: partials/content.php:20
+msgid "Featured"
+msgstr "Hervorgehoben"
+
+#: partials/content-single.php:53
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Zeige alle Beiträge von %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: partials/content-single.php:35
+msgid "Tagged %1$s."
+msgstr "Getaggt mit %1$s."
+
+#: partials/content-single.php:33 partials/content.php:55
+msgid "Posted in %1$s."
+msgstr "Ver&ouml;ffentlicht unter %1$s."
+
+#: partials/content-single.php:29 partials/content-single.php:30
+#: partials/content.php:52
+msgctxt "used between list items, there is a space after the comma"
+msgid ", "
+msgstr ", "
+
+#: partials/content-not-found.php:24
+msgid "Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post."
+msgstr "In diesem Archiv wurden keine Ergebnisse gefunden, vielleicht hilft die Suchfunktion weiter."
+
+#: partials/content-not-found.php:22
+msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
+msgstr "Leider gibt es keine Ergebnisse für deine Suchkriterien. Bitte versuche es noch einmal mit anderen Suchbegriffen."
+
+#: partials/content-not-found.php:17
+msgid "Nothing Found"
+msgstr "Es konnte nichts gefunden werden."
+
+#: partials/content-gallery.php:52
+msgid "This gallery contains <strong>%1$s photo</strong>."
+msgid_plural "This gallery contains <strong>%1$s photos</strong>."
+msgstr[0] "Diese Galerie enth&auml;lt <strong>%1$s Foto</strong>."
+msgstr[1] "Diese Galerie enth&auml;lt <strong>%1$s Fotos</strong>."
+
+#: inc/theme-options.php:382
+msgid "Subscribe via RSS"
+msgstr "Abonniere den RSS Feed"
+
+#: inc/theme-options.php:381
+msgid "Follow Konstantin on Twitter"
+msgstr "Folge Konstantin auf Twitter"
+
+#: inc/theme-options.php:375
+msgid "No news items, feed might be broken..."
+msgstr "Keine Neuigkeiten, Feed k&ouml;nnte nicht funktionieren&ellipsis;"
+
+#: inc/theme-options.php:371
+msgid "News from Konstantin"
+msgstr "Neuigkeiten von Konstantin"
+
+#: inc/theme-options.php:343
+msgid "Blog about it &amp; link to the Theme page"
+msgstr "Dar&uuml;ber schreiben &amp; zur Theme Seite verlinken"
+
+#: inc/theme-options.php:342
+msgid "Rate the Theme 5&#9733; on WordPress.org"
+msgstr "Das Theme auf WordPress.org mit 5&#9733; bewerten"
+
+#: inc/theme-options.php:340
+msgid "Or you could:"
+msgstr "Du k&ouml;nntest auch:"
+
+#: inc/theme-options.php:333
+msgctxt "Plugin Name"
+msgid "Want to help make this Theme even better? All donations are used to improve %1$s, so donate $20, $50 or $100 now!"
+msgstr "M&ouml;chtest du helfen das Theme noch besser zu machen? Alle Spenden werden dazu verwendet %1$s zu verbessern. Spende jetzt $20, $50 odre $100!"
+
+#: inc/theme-options.php:331
+msgid "Help spread the word!"
+msgstr "Sag es weiter!"
+
+#: inc/theme-options.php:302
+msgid "Settings saved. <a href=\"%s\">Visit your site</a> to see how it looks."
+msgstr "Einstellungen gespeichert. <a href=\"%s\">Sieh dir das Ergebnis an.</a> "
+
+#: inc/theme-options.php:254
+msgid "The Bootstrap Theme Options"
+msgstr "The Bootstrap Theme Optionen"
+
+#: inc/theme-options.php:80
+msgid "Navigation Bar"
+msgstr "Navigationsleiste"
+
+#: inc/theme-options.php:22 inc/theme-options.php:23 inc/theme-options.php:145
+msgid "Theme Options"
+msgstr "Theme-Einstellungen"
+
+#: inc/theme-customizer.php:90 inc/theme-options.php:105
+msgid "Fixed at bottom."
+msgstr "Unten fixiert."
+
+#: inc/theme-customizer.php:89 inc/theme-options.php:101
+msgid "Fixed on top."
+msgstr "Oben fixiert."
+
+#: inc/theme-customizer.php:88 inc/theme-options.php:97
+msgid "Static."
+msgstr "Statisch."
+
+#: inc/theme-customizer.php:83 inc/theme-options.php:92
+msgid "Navigation Bar Position"
+msgstr "Position der Navigationsleiste"
+
+#: inc/theme-customizer.php:75
+msgid "Use inverse color on navigation bar."
+msgstr "Verwende umgedrehte Farben für die Navigationsleiste."
+
+#: inc/theme-customizer.php:67 inc/theme-options.php:89
+msgid "Add searchform to navigation bar."
+msgstr "Suchformular der Navigationsleiste hinzuf&uuml;gen"
+
+#: inc/theme-customizer.php:59 inc/theme-options.php:84
+msgid "Add site name to navigation bar."
+msgstr "Seitenname der Navigationsleiste hinzuf&uuml;gen"
+
+#: inc/theme-customizer.php:53 inc/theme-options.php:170
+msgid "Content on right"
+msgstr "Inhalt rechts"
+
+#: inc/theme-customizer.php:52 inc/theme-options.php:166
+msgid "Content on left"
+msgstr "Inhalt links"
+
+#: inc/theme-customizer.php:47 inc/theme-options.php:79
+msgid "Default Layout"
+msgstr "Layout"
+
+#: inc/theme-customizer.php:32
+msgid "Navbar Options"
+msgstr "Navbar Optionen"
+
+#: inc/theme-customizer.php:28
+msgid "Layout"
+msgstr "Layout"
+
+#: inc/the-bootstrap-image-meta-widget.php:151
+msgid "Title:"
+msgstr "Titel:"
+
+#: inc/the-bootstrap-image-meta-widget.php:102
+msgid "Camera:"
+msgstr "Modell:"
+
+#: inc/the-bootstrap-image-meta-widget.php:90
+#: inc/the-bootstrap-image-meta-widget.php:92
+#: inc/the-bootstrap-image-meta-widget.php:95
+msgid "%d sec."
+msgstr "%d Sek."
+
+#: inc/the-bootstrap-image-meta-widget.php:83
+msgid "Shutter:"
+msgstr "Belichtungsdauer:"
+
+#: inc/the-bootstrap-image-meta-widget.php:78
+msgid "Iso:"
+msgstr "Empfindlichkeit (ISO):"
+
+#: inc/the-bootstrap-image-meta-widget.php:73
+msgid "Focal length:"
+msgstr "Brennweite:"
+
+#: inc/the-bootstrap-image-meta-widget.php:68
+msgid "Aperture:"
+msgstr "Blende:"
+
+#: inc/the-bootstrap-image-meta-widget.php:65
+msgid "%s pixels"
+msgstr "%s Pixel"
+
+#: inc/the-bootstrap-image-meta-widget.php:64
+msgid "Full size:"
+msgstr "Volle Gr&ouml;&szlig;e:"
+
+#: inc/the-bootstrap-image-meta-widget.php:60
+msgid "Created:"
+msgstr "Erstellt am:"
+
+#: inc/the-bootstrap-image-meta-widget.php:52
+msgid "Info"
+msgstr "Info"
+
+#: inc/the-bootstrap-image-meta-widget.php:30
+msgid "Displays meta information on image attachment pages"
+msgstr "Zeigt Metainformationen auf Bild Anhang Seiten an"
+
+#: inc/the-bootstrap-image-meta-widget.php:28
+msgid "The Bootstrap Image Meta Widget"
+msgstr "The Bootstrap Bild Meta Widget"
+
+#: inc/the-bootstrap-gallery-widget.php:147
+msgid "Select Gallery:"
+msgstr "Galerie auswählen:"
+
+#: inc/the-bootstrap-gallery-widget.php:142
+msgid "No galleries have been created yet. <a href=\"%s\">Create some</a>."
+msgstr "Es wurden noch keine Galerien erstellt. <a href=\"%s\">Jetzt Galerie erstellen</a>."
+
+#: inc/the-bootstrap-gallery-widget.php:86 partials/content-gallery.php:77
+msgctxt "carousel-control"
+msgid "&rsaquo;"
+msgstr "&lsaquo;"
+
+#: inc/the-bootstrap-gallery-widget.php:85 partials/content-gallery.php:76
+msgctxt "carousel-control"
+msgid "&lsaquo;"
+msgstr "&lsaquo;"
+
+#: inc/the-bootstrap-gallery-widget.php:65 partials/content-aside.php:19
+#: partials/content-gallery.php:20 partials/content.php:19
+#: partials/content.php:24
+msgid "Permalink to %s"
+msgstr "Permanentlink zu %s"
+
+#: inc/the-bootstrap-gallery-widget.php:30
+msgid "Displays gallery images of a specified post with the Gallery post format."
+msgstr "Zeigt Galeriebilder eines spezifischen Galerie Beitrags an."
+
+#: inc/the-bootstrap-gallery-widget.php:28
+msgid "The Bootstrap Gallery Widget"
+msgstr "The Bootstrap Galerie Widget"
+
+#: inc/template-tags.php:281
+msgid "Comment on %s"
+msgstr "Kommentiere %s"
+
+#: inc/template-tags.php:268
+msgid "Enter your password to view comments."
+msgstr "Auch die Kommentare sind durch das Passwort geschützt."
+
+#: inc/template-tags.php:260
+msgid "Comments Off"
+msgstr "Kommentare deaktiviert"
+
+#: inc/template-tags.php:259
+msgid "% Comments"
+msgstr "% Kommentare"
+
+#: inc/template-tags.php:258
+msgid "1 Comment"
+msgstr "1 Kommentar"
+
+#: inc/template-tags.php:257
+msgid "No Comments"
+msgstr "Keine Kommentare"
+
+#: inc/template-tags.php:199 inc/template-tags.php:200 searchform.php:12
+#: searchform.php:14
+msgid "Search"
+msgstr "Suchen"
+
+#: inc/template-tags.php:150 inc/template-tags.php:164
+msgid "Pages:"
+msgstr "Seiten:"
+
+#: inc/template-tags.php:136
+msgid "Previous page"
+msgstr "Vorherige Seite"
+
+#: inc/template-tags.php:135
+msgid "Next page"
+msgstr "Nächste Seite"
+
+#: inc/template-tags.php:107
+msgid "<strong>%</strong> Replies"
+msgstr "<strong>%</strong> Kommentare"
+
+#: inc/template-tags.php:107
+msgid "<strong>1</strong> Reply"
+msgstr "<strong>1</strong> Kommentar"
+
+#: inc/template-tags.php:101
+msgid "View all posts by %s"
+msgstr "Zeige alle Artikel von %s"
+
+#: inc/template-tags.php:95
+msgid "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+msgstr "<span class=\"sep\">Veröffentlicht am </span><a href=\"%1$s\" title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" datetime=\"%3$s\" pubdate>%4$s</time></a><span class=\"by-author\"> <span class=\"sep\"> von </span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" rel=\"author\">%7$s</a></span></span>"
+
+#: inc/template-tags.php:77
+msgid "Older Comments &rarr;"
+msgstr "&Auml;ltere Kommentare &larr;"
+
+#: inc/template-tags.php:76
+msgid "&larr; Newer Comments"
+msgstr "&larr; Neuere Kommentare"
+
+#: inc/template-tags.php:75
+msgid "Comment navigation"
+msgstr "Kommentar-Navigation"
+
+#: image.php:59
+msgid "Next Photo &raquo;"
+msgstr "N&auml;chstes Bild &raquo;"
+
+#: image.php:57
+msgid "&laquo; Previous Photo"
+msgstr "&laquo; Vorheriges Bild"
+
+#: image.php:55
+msgid "Leave a comment"
+msgstr "Schreibe einen Kommentar"
+
+#: image.php:46
+msgctxt "Amount of images"
+msgid "%d image"
+msgid_plural "%d images"
+msgstr[0] "%d Bild"
+msgstr[1] "%d Bilder"
+
+#: image.php:43
+msgctxt "Post title, amount of images"
+msgid "&laquo; %1$s (%2$s)"
+msgstr "&laquo; %1$s (%2$s)"
+
+#: header.php:59
+msgid "Skip to secondary content"
+msgstr "Zum sekundären Inhalt wechseln"
+
+#: header.php:58
+msgid "Skip to primary content"
+msgstr "Zum Inhalt wechseln"
+
+#: header.php:57
+msgid "Main menu"
+msgstr "Hauptmenü"
+
+#: functions.php:980
+msgid "Submit"
+msgstr "Senden"
+
+#: functions.php:980
+msgid "Password:"
+msgstr "Passwort:"
+
+#: functions.php:980
+msgid "This post is password protected. To view it please enter your password below:"
+msgstr "Dieser Artikel ist passwortgeschützt. Um ihn anzusehen, trage das Passwort bitte hier ein:"
+
+#: functions.php:918
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d Kommentar"
+msgstr[1] "%d Kommentare"
+
+#: functions.php:748
+msgid "Website"
+msgstr "Website"
+
+#: functions.php:727
+msgid "will not be published"
+msgstr "wird nicht veröffentlicht"
+
+#: functions.php:724
+msgid "Email"
+msgstr "E-Mail-Adresse"
+
+#: functions.php:701 functions.php:727
+msgid "required"
+msgstr "Erforderlich"
+
+#: functions.php:698
+msgid "Name"
+msgstr "Name"
+
+#: functions.php:636
+msgid "Reply <span>&darr;</span>"
+msgstr "Kommentiere <span>&darr;</span>"
+
+#: functions.php:627
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Freischaltung."
+
+#. translators: 1: date, 2: time
+#: functions.php:620
+msgid "%1$s at %2$s"
+msgstr "%1$s um %2$s"
+
+#. translators: 1: comment author, 2: date and time
+#: functions.php:614
+msgid "%1$s <span class=\"says\">said</span> on %2$s:"
+msgstr "%1$s <span class=\"says\">sagte</span> am %2$s:"
+
+#: functions.php:598 functions.php:623 image.php:54 inc/template-tags.php:111
+#: partials/content-page.php:25
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: functions.php:597
+msgid "Pingback:"
+msgstr "Pingback:"
+
+#: functions.php:567
+msgid "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this account\">Log out?</a>"
+msgstr "Angemeldet als <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Vom Benutzerkonto ausloggen\">Abmelden?</a>"
+
+#: functions.php:566
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr "Du musst <a href=\"%s\">angemeldet</a> sein, um einen Kommentar abzugeben."
+
+#: functions.php:565
+msgid "Leave a reply to %s"
+msgstr "Auf %s antworten"
+
+#: functions.php:564 inc/template-tags.php:107
+msgid "Leave a reply"
+msgstr "Schreibe eine Antwort"
+
+#: functions.php:562
+msgid "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags and attributes: %s"
+msgstr "Du kannst folgende <abbr title=\"HyperText Markup Language\">HTML</abbr>-Tags benutzen: %s"
+
+#: functions.php:560
+msgctxt "noun"
+msgid "Comment"
+msgstr "Kommentar"
+
+#: functions.php:542
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: functions.php:512
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Gedanke zu &bdquo;%2$s&ldquo;"
+msgstr[1] "%1$s Gedanken zu &bdquo;%2$s&ldquo;"
+
+#: functions.php:502
+msgid "This post is password protected. Enter the password to view any comments."
+msgstr "Dieser Beitrag ist passwortgeschützt. Um Kommentare anschauen zu können musst du das Passwort angeben."
+
+#: functions.php:405 partials/content-aside.php:31
+#: partials/content-image.php:20 partials/content-page.php:22
+#: partials/content-status.php:22 partials/content.php:45
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen <span class=\"meta-nav\">&rarr;</span>"
+
+#: functions.php:359
+msgid "&copy; %1$s <a href=\"%2$s\">%3$s</a>, all rights reserved."
+msgstr "&copy; %1$s <a href=\"%2$s\">%3$s</a>, alle Rechte vorbehalten."
+
+#: functions.php:191
+msgid "Shown on image attachment pages."
+msgstr "Auf Bilder-Seiten sichtbar."
+
+#: functions.php:190
+msgid "Image Sidebar"
+msgstr "Bilder-Sidebar"
+
+#: functions.php:181
+msgid "Main Sidebar"
+msgstr "Haupt-Seitenleiste"
+
+#: functions.php:83
+msgid "Footer Menu"
+msgstr "Seitenfuß-Menü"
+
+#: functions.php:82
+msgid "Header Menu"
+msgstr "Kopfzeile Menü"
+
+#: functions.php:81
+msgid "Main Navigation"
+msgstr "Hauptnavigation"
+
+#: footer.php:35
+msgid "%d queries. %s seconds."
+msgstr "%d Datenbankanfragen. %s Sekunden."
+
+#: footer.php:27
+msgctxt "WordPress"
+msgid "Proudly powered by %s"
+msgstr "Proudly powered by %s"
+
+#: footer.php:25
+msgid "Semantic Personal Publishing Platform"
+msgstr "Semantic Personal Publishing Platform"
+
+#: footer.php:24
+msgid "http://wordpress.org/"
+msgstr "http://de.wordpress.org/"
+
+#: category.php:23
+msgid "Category Archives: %s"
+msgstr "Archiv der Kategorie: %s"
+
+#: author.php:31 partials/content-single.php:45
+msgid "About %s"
+msgstr "Über %s"
+
+#: author.php:23
+msgid "Author Archives: %s"
+msgstr "Archiv des Autors: %s"
+
+#: archive.php:36
+msgid "Blog Archives"
+msgstr "Blog-Archive"
+
+#: archive.php:34
+msgid "Yearly Archives: %s"
+msgstr "Archiv für das Jahr: %s"
+
+#: archive.php:32
+msgid "Monthly Archives: %s"
+msgstr "Archiv für den Monat: %s"
+
+#: archive.php:30
+msgid "Daily Archives: %s"
+msgstr "Archiv für den Tag: %s"
+
+#: 404.php:38
+msgctxt "%1$s: smilie"
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Versuch’s mit einem Blick in die Monatsarchive. %1$s"
+
+#: 404.php:35
+msgid "Most Used Categories"
+msgstr "Oft verwendete Kategorien"
+
+#: 404.php:27
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching, or one of the links below, can help."
+msgstr "Entschuldige bitte, aber das was du gesucht hast, konnte nicht gefunden werden. Nutze doch die Suchfunktion oder ein paar der weiter unten angebotenen Möglichkeiten, um das Gewünschte zu finden."
+
+#: 404.php:23
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "Ups, diesen Inhalt gibt es wohl nicht."
+
+#. Author URI of the plugin/theme
+msgid "http://en.wp.obenland.it/"
+msgstr "http://en.wp.obenland.it/"
+
+#. Author of the plugin/theme
+msgid "Konstantin Obenland"
+msgstr "Konstantin Obenland"
+
+#. Theme URI of the plugin/theme
+msgid "http://en.wp.obenland.it/the-bootstrap/"
+msgstr "http://en.wp.obenland.it/the-bootstrap/"
