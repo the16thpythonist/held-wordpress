@@ -1,4 +1,6 @@
 [submodule "wp-content/themes/helmholtz"]
+	path = wp-content/themes/helmholtz
 	url = https://fuzzy.fzk.de/gogs/jonas.teufel/helmholtz-theme.git
 [submodule "wp-content/plugins/helmholtz"]
+	path = wp-content/plugins/helmholtz
 	url = https://fuzzy.fzk.de/gogs/jonas.teufel/helmholtz-plugin.git
