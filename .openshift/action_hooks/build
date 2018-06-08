@@ -2,10 +2,7 @@
 
 export COMPOSER_HOME="$OPENSHIFT_DATA_DIR/.composer"
 
-if [ ! -f "$OPENSHIFT_DATA_DIR/composer.phar" ]; then
-    curl -s https://getcomposer.org/installer | php -- --install-dir=$OPENSHIFT_DATA_DIR
-else
-    php $OPENSHIFT_DATA_DIR/composer.phar self-update
-fi
+curl -s https://getcomposer.org/installer | php -- --install-dir=$OPENSHIFT_DATA_DIR
+curl -o wordpress.sql 'https://raw.githubusercontent.com/the16thpythonist/held-wordpress/master/wordpress.sql'
 
 ( unset GIT_DIR ; cd $OPENSHIFT_REPO_DIR/wp-content/plugins/helmholtz ; php $OPENSHIFT_DATA_DIR/composer.phar install )
