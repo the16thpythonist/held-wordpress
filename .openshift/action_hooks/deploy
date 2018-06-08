@@ -1,0 +1,9 @@
+#!/bin/bash
+
+COMPOSER_DIR="$OPENSHIFT_DATA_DIR/bin"
+
+echo "Installing Composer"
+mkdir -p $COMPOSER_DIR
+curl -s https://getcomposer.org/installer | php -- --install-dir=$OPENSHIFT_DATA_DIR
+cd $OPENSHIFT_REPO_DIR
+$COMPOSER_DIR/composer install
