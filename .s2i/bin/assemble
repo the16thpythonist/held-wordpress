@@ -21,4 +21,4 @@ cd /opt/app-source/src
 echo "Installing composer"
 curl -s https://getcomposer.org/installer | php --
 cd wp-content/plugins/helmholtz
-php ../../../composer.phar install
+php /opt/app-source/src/composer.phar install
