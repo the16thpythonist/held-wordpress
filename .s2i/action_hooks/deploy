@@ -1,9 +1,14 @@
 #!/bin/bash
 
 # Installing the requirements with composer
+echo "Attempting to install composer"
+echo "Current working directory"
+pwd
 cd /opt/app-root/src
+pwd
 ls
 echo "Installing composer"
 curl -s https://getcomposer.org/installer | php --
+echo "Attempting to install files"
 cd /opt/app-root/src/wp-content/plugins/helmholtz
-php composer.phar install
+php /opt/app-root/src/composer.phar install

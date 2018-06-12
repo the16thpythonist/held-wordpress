@@ -1,6 +1,0 @@
-#!/bin/bash
-
-echo "installing composer"
-curl -s https://getcomposer.org/installer | php --
-cd wp-content/plugins/helmholtz
-php ../../../composer.phar install
