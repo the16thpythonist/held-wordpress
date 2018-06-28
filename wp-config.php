@@ -37,7 +37,7 @@ define('FS_METHOD', 'direct');
 //define('WP_SITEURL', 'http://localhost/tmp/ufo');
 define('WP_HOME', 'http://held-wordpress-web.kaas.kit.edu');
 define('WP_SITEURL', 'http://held-wordpress-web.kaas.kit.edu');
-/**#@+
+/**
  * Authentication Unique Keys and Salts.
  *
  * Change these to different unique phrases!
