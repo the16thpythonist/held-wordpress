@@ -1,11 +1,18 @@
 #!/bin/bash
 
-# Installing the requirements with composer
-echo "Attempting to install composer"
-echo "Current working directory"
+set -eo pipefail
+
+echo 'Is this event working?'
 cd /opt/app-root/src
-echo "Installing composer"
 curl -s https://getcomposer.org/installer | php --
-echo "Attempting to install files"
 cd /opt/app-root/src/wp-content/plugins/helmholtz
 php /opt/app-root/src/composer.phar install
+# Installing the requirements with composer
+#echo "Attempting to install composer"
+#echo "Current working directory"
+#cd /opt/app-root/src
+#echo "Installing composer"
+#curl -s https://getcomposer.org/installer | php --
+#echo "Attempting to install files"
+#cd /opt/app-root/src/wp-content/plugins/helmholtz
+#php /opt/app-root/src/composer.phar install
