@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -eo pipefail
-
 echo 'Is this event working?'
 cd /opt/app-root/src
 curl -s https://getcomposer.org/installer | php --

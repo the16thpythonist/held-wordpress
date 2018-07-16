@@ -35,8 +35,8 @@ define('WP_MEMORY_LIMIT', '512M');
 define('FS_METHOD', 'direct');
 //define('WP_HOME', 'http://localhost/tmp/ufo');
 //define('WP_SITEURL', 'http://localhost/tmp/ufo');
-define('WP_HOME', 'http://held-wordpress-web.kaas.kit.edu');
-define('WP_SITEURL', 'http://held-wordpress-web.kaas.kit.edu');
+define('WP_HOME', 'http://held.kaas.kit.edu');
+define('WP_SITEURL', 'http://held.kaas.kit.edu');
 /**
  * Authentication Unique Keys and Salts.
  *
