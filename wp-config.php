@@ -1,6 +1,5 @@
 <?php
 define('DB_HOST', 'mariadb');define('WP_HOME', 'http://held.kaas.kit.edu');define('WP_SITEURL', 'http://held.kaas.kit.edu');define('WP_DEBUG', false);
-define(DB_HOST, mariadb);define(WP_HOME, http://held.kaas.kit.edu);define(WP_SITEURL, http://held.kaas.kit.edu);define(WP_DEBUG, false);
 /**
  * The base configuration for WordPress
  *
@@ -85,7 +84,4 @@ if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(__FILE__) . '/');
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-define('DB_HOST', 'mariadb');
-define('WP_HOME', 'http://held.kaas.kit.edu');
-define('WP_SITEURL', 'http://held.kaas.kit.edu');
-define('WP_DEBUG', false);
+
