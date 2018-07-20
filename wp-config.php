@@ -27,7 +27,6 @@ define('DB_USER', 'wordpress');
 define('DB_PASSWORD', 'wordpress');
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
-//define('DB_HOST', 'mariadb');
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
 /** The Database Collate type. Don't change this if in doubt. */
@@ -36,8 +35,6 @@ define('WP_MEMORY_LIMIT', '512M');
 define('FS_METHOD', 'direct');
 define('WP_HOME', 'http://localhost/tmp/ufo');
 define('WP_SITEURL', 'http://localhost/tmp/ufo');
-//define('WP_HOME', 'http://held.kaas.kit.edu');
-//define('WP_SITEURL', 'http://held.kaas.kit.edu');
 /**
  * Authentication Unique Keys and Salts.
  *
@@ -75,7 +72,6 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-//define('WP_DEBUG', true);
 define('WP_DEBUG', false);
 set_time_limit(60 * 60 * 12);
 /* That's all, stop editing! Happy blogging. */
