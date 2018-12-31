@@ -1,4 +1,5 @@
 <?php
+define('DB_HOST', 'mariadb');define('WP_HOME', 'http://held.kaas.kit.edu');define('WP_SITEURL', 'http://held.kaas.kit.edu');define('WP_DEBUG', false);
 /**
  * The base configuration for WordPress
  *
@@ -21,9 +22,9 @@
 /** The name of the database for WordPress */
 define('DB_NAME', 'wordpress');
 /** MySQL database username */
-define('DB_USER', 'wordpress');
+define('DB_USER', 'web');
 /** MySQL database password */
-define('DB_PASSWORD', 'wordpress');
+define('DB_PASSWORD', 'struppi98');
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 /** Database Charset to use in creating database tables. */
