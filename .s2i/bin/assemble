@@ -11,5 +11,5 @@ curl -s https://getcomposer.org/installer | php --
 
 echo "---> Installing composer packages for helmholtz plugin"
 cd /opt/app-root/src/wp-content/plugins/helmholtz
-php /opt/app-root/src/composer.phar update
+#php /opt/app-root/src/composer.phar update
 
