@@ -5,6 +5,10 @@ shopt -s dotglob
 echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
+echo "--> Installing the newest version of PHP"
+yum update
+yum install php72 php72-php-fpm php72-php-mysqlnd php72-php-opcache php72-php-xml php72-php-xmlrpc php72-php-gd php72-php-mbstring php72-php-json
+
 echo "---> Installing composer"
 cd /opt/app-root/src
 curl -s https://getcomposer.org/installer | php --
