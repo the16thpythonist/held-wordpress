@@ -1,5 +1,4 @@
 <?php
-define('DB_HOST', 'mariadb');define('WP_HOME', 'http://held.kaas.kit.edu');define('WP_SITEURL', 'http://held.kaas.kit.edu');define('WP_DEBUG', false);define('DB_USER', 'wordpress');define('DB_PASSWORD', 'wordpress');
 /**
  * The base configuration for WordPress
  *
@@ -18,23 +17,34 @@ define('DB_HOST', 'mariadb');define('WP_HOME', 'http://held.kaas.kit.edu');defin
  *
  * @package WordPress
  */
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'wordpress');
-/** MySQL database username */
-define('DB_USER', 'web');
-/** MySQL database password */
-define('DB_PASSWORD', 'struppi98');
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+
+/**
+ * 06.08.2019
+ * The config values are now based on environmental variables, as this file has to be uploaded to github and we dont
+ * want all the production credentials to be publicly visible on github...
+ * Also the issue with defining the config globals is solved a little bit more programmatically and less hard coded
+ */
+$CFG_VARS = [
+    // DATABASE SPECIFIC
+    'DB_NAME'       => 'WPHELD_DB_NAME',
+    'DB_USER'       => 'WPHELD_DB_USER',
+    'DB_PASSWORD'   => 'WPHELD_DB_PASSWORD',
+    'DB_HOST'       => 'WPHELD_DB_HOST',
+    // WORDPRESS SPECIFIC
+    'WP_DEBUG'      => 'WPHELD_WP_DEBUG',
+    'WP_HOME'       => 'WPHELD_WP_HOME',
+    'WP_SITEURL'    => 'WPHELD_WP_SITEURL',
+    // ENCRYPTION SPECIFIC
+];
+foreach($CFG_VARS as $config_name => $env_name ) {
+    define($config_name, getenv($env_name));
+}
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8mb4');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 define('WP_MEMORY_LIMIT', '512M');
 define('FS_METHOD', 'direct');
-define('WP_HOME', 'http://localhost/tmp/ufo');
-define('WP_SITEURL', 'http://localhost/tmp/ufo');
 /**
  * Authentication Unique Keys and Salts.
  *
