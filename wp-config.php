@@ -24,6 +24,7 @@
  * want all the production credentials to be publicly visible on github...
  * Also the issue with defining the config globals is solved a little bit more programmatically and less hard coded
  */
+define('WP_DEBUG', false);
 $CFG_VARS = [
     // DATABASE SPECIFIC
     'DB_NAME'       => 'WPHELD_DB_NAME',
@@ -37,6 +38,7 @@ $CFG_VARS = [
     // ENCRYPTION SPECIFIC
 ];
 foreach($CFG_VARS as $config_name => $env_name ) {
+    // var_dump(getenv($env_name));
     define($config_name, getenv($env_name));
 }
 /** Database Charset to use in creating database tables. */
