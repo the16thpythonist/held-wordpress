@@ -8,7 +8,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://cabrerahector.com/
+ * @link              https://cabrerahector.com/
  * @since             4.0.0
  * @package           WordPressPopularPosts
  *
@@ -16,9 +16,9 @@
  * Plugin Name:       WordPress Popular Posts
  * Plugin URI:        https://wordpress.org/plugins/wordpress-popular-posts/
  * Description:       A highly customizable widget that displays the most popular posts on your blog.
- * Version:           4.0.13
+ * Version:           5.0.1
  * Author:            Hector Cabrera
- * Author URI:        http://cabrerahector.com/
+ * Author URI:        https://cabrerahector.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wordpress-popular-posts
@@ -29,27 +29,32 @@ if ( ! defined( 'WPINC' ) ) {
     die();
 }
 
-define( 'WPP_VER', '4.0.13' );
+define('WPP_VERSION', '5.0.1');
+define('WPP_MIN_PHP_VERSION', '5.4');
+define('WPP_MIN_WP_VERSION', '4.9');
 
-/*
- * The code that runs during plugin activation.
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-popular-posts-activator.php';
-register_activation_hook( __FILE__, array('WPP_Activator', 'activate') );
+/** Requirements check */
+global $wp_version;
 
-/*
- * The code that runs during plugin activation.
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-popular-posts-deactivator.php';
-register_deactivation_hook( __FILE__, array('WPP_Deactivator', 'deactivate') );
+// We're good, continue!
+if ( version_compare(PHP_VERSION, WPP_MIN_PHP_VERSION, '>=') && version_compare($wp_version, WPP_MIN_WP_VERSION, '>=') ) {
+    $wpp_main_plugin_file = __FILE__;
+    // Load plugin bootstrap
+    require __DIR__ . '/src/Bootstrap.php';
+} // Nope.
+else {
+    if ( isset($_GET['activate']) )
+        unset($_GET['activate']);
 
-/*
- * The core plugins class.
- */
-require plugin_dir_path( __FILE__ ) . 'includes/class-wordpress-popular-posts.php';
-
-/*
- * Begin execution of the plugin.
- */
-$wordpress_popular_posts = new WordPressPopularPosts();
-$wordpress_popular_posts->run();
+    function wpp_render_min_requirements_notice() {
+        global $wp_version;
+        echo '<div class="notice notice-error"><p>' . sprintf(
+            __('WordPress Popular Posts requires at least PHP %1$s and WordPress %2$s to function correctly. Your site uses PHP %3$s and WordPress %4$s.', 'wordpress-popular-posts'),
+            WPP_MIN_PHP_VERSION,
+            WPP_MIN_WP_VERSION,
+            PHP_VERSION,
+            $wp_version
+        ) . '</p></div>';
+    }
+    add_action('admin_notices', 'wpp_render_min_requirements_notice');
+}

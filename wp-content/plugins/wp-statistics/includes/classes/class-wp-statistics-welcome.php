@@ -9,13 +9,15 @@ class WP_Statistics_Welcome {
 	 */
 	public static function init() {
 		global $WP_Statistics;
+
+		// Check Show WelCome Page
 		if ( $WP_Statistics->get_option( 'show_welcome_page', false ) and ( strpos( $_SERVER['REQUEST_URI'], '/wp-admin/index.php' ) !== false or ( isset( $_GET['page'] ) and $_GET['page'] == 'wps_overview_page' ) ) ) {
 			// Disable show welcome page
 			$WP_Statistics->update_option( 'first_show_welcome_page', true );
 			$WP_Statistics->update_option( 'show_welcome_page', false );
 
 			// Redirect to welcome page
-			wp_redirect( admin_url( 'admin.php?page=wps_welcome' ) );
+			wp_redirect( WP_Statistics_Admin_Pages::admin_url( 'wps_welcome' ) );
 		}
 
 		if ( ! $WP_Statistics->get_option( 'first_show_welcome_page', false ) ) {
@@ -34,15 +36,27 @@ class WP_Statistics_Welcome {
 	 * Welcome page
 	 */
 	public static function page_callback() {
-		// Load our JS to be used.
-		wp_enqueue_script(
-			'wp-statistics-admin-js',
-			WP_Statistics::$reg['plugin-url'] . 'assets/js/admin.js',
-			array( 'jquery' ),
-			'1.0'
-		);
 
-		include( WP_Statistics::$reg['plugin-dir'] . "includes/templates/welcomes/last-version.php" );
+		// Create Default Variable
+		$error   = null;
+		$plugins = array();
+
+		// Check List Plugins if in Plugins Tab
+		if ( isset( $_GET['tab'] ) and $_GET['tab'] == "addons" ) {
+			$response      = wp_remote_get( 'https://wp-statistics.com/wp-json/plugin/addons' );
+			$response_code = wp_remote_retrieve_response_code( $response );
+			if ( is_wp_error( $response ) ) {
+				$error = $response->get_error_message();
+			} else {
+				if ( $response_code == '200' ) {
+					$plugins = json_decode( $response['body'] );
+				} else {
+					$error = $response['body'];
+				}
+			}
+		}
+
+		include( WP_Statistics::$reg['plugin-dir'] . "includes/templates/welcome.php" );
 	}
 
 	/**
@@ -52,13 +66,16 @@ class WP_Statistics_Welcome {
 	public static function do_welcome( $upgrader_object, $options ) {
 		$current_plugin_path_name = 'wp-statistics/wp-statistics.php';
 
-		if ( $options['action'] == 'update' && $options['type'] == 'plugin' ) {
+		if ( isset( $options['action'] ) and $options['action'] == 'update' and isset( $options['type'] ) and $options['type'] == 'plugin' and isset( $options['plugins'] ) ) {
 			foreach ( $options['plugins'] as $each_plugin ) {
 				if ( $each_plugin == $current_plugin_path_name ) {
 					global $WP_Statistics;
 
 					// Enable welcome page in database
 					$WP_Statistics->update_option( 'show_welcome_page', true );
+
+					// Run the upgrader
+					WP_Statistics_Updates::do_upgrade();
 				}
 			}
 		}

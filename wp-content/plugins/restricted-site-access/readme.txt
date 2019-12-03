@@ -1,10 +1,10 @@
 === Restricted Site Access ===
 Contributors: jakemgold, rcbth, 10up, thinkoomph, tlovett1
-Donate link: http://10up.com/plugins/restricted-site-access-wordpress/
+Donate link: https://10up.com/plugins/restricted-site-access-wordpress/
 Tags: privacy, restricted, restrict, privacy, limited, permissions, security, block
-Requires at least: 3.5
-Tested up to: 4.9.4
-Stable tag: trunk
+Requires at least: 4.6
+Tested up to: 5.3
+Stable tag: 7.2.0
 
 Limit access to visitors who are logged in or allowed by IP addresses. Includes many options for handling blocked visitors.
 
@@ -65,6 +65,41 @@ Restricted Site Access is not meant to be a top secret data safe, but simply a r
 
 Page caching plugins often hook into WordPress to quickly serve the last cached output of a page before we can check to see if a visitor’s access should be restricted. Not all page caching plugins behave the same way, but several solutions - including external solutions we might not detect - can cause restricted pages to be publicly served regardless of your settings.
 
+= Why can't logged-in users see all the sites on my multisite instance? =
+
+In 6.2.0, the behavior in a multisite install changed from allowing any logged-in user to see a site to checking their role for that specific site. This is a safer default given the varying ways multisite is used; however, if you would prefer to rely on the previous behavior rather than explicitly adding users to each site, place the following PHP code in the theme's functions.php file or in a simple plug-in:
+
+`
+add_filter( 'restricted_site_access_user_can_access', 'my_rsa_user_can_access' );
+
+function my_rsa_user_can_access( $access ) {
+	if ( is_user_logged_in() ) {
+		return true;
+	}
+
+	return $access;
+}
+`
+
+= Is there a way to configure this with [WP-CLI](https://make.wordpress.org/cli/)? =
+
+As of version 7.0.0, CLI integration has been added. To see the available commands, type the following in your WordPress directory:
+
+`
+$ wp rsa
+`
+
+= How can I programatically define whitelisted IPs? =
+
+In 7.0.0, the capacity to define a pipe delimited array of whitelisted IP addresses via constant was introduced.
+
+In your `wp-config.php` file, you can define the following:
+
+`
+define( 'RSA_IP_WHITELIST', '192.0.0.1|192.0.0.10' );
+`
+
+
 == Screenshots ==
 
 1. Screenshot of settings panel with simple Restricted Site Access option (send to login page).
@@ -72,6 +107,42 @@ Page caching plugins often hook into WordPress to quickly serve the last cached 
 1. Plenty of inline help! Looks and behaves like native WordPress help.
 
 == Changelog ==
+
+= 7.2.0 =
+* **Added:** Warn and confirm before network disabling the plugin (props [@pereirinha](profiles.wordpress.org/pereirinha), [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
+* **Fixed:** Ensure comments associated with IPs stay associated correctly (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/), [@ivankk](https://profiles.wordpress.org/ivankk/), [@helen](https://profiles.wordpress.org/helen/))
+* **Fixed:** Don't show escaped HTML in page caching notice (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/), [@aaemnnosttv](https://profiles.wordpress.org/aaemnnosttv/))
+* **Fixed:** Multisite: Avoid a redirect loop when logging in as user with no role (props [@phyrax](https://profiles.wordpress.org/phyrax/), [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/), [@roytanck](https://profiles.wordpress.org/roytanck/), [@helen](https://profiles.wordpress.org/helen/), [@rmccue](https://profiles.wordpress.org/rmccue/))
+
+= 7.1.0 =
+* Added: IP whitelist: Add a Comment field next to each IP address to help identify IP addresses added to the whitelist.
+* Added: Add constants to force enable/disable restrictions. Set `RSA_FORCE_RESTRICTION` to `true` to force restriction or `RSA_FORBID_RESTRICTION` to disable restriction. `RSA_FORCE_RESTRICTION` will override `RSA_FORBID_RESTRICTION` if both are set.
+* Fixed: Disable individual site settings when network enforced mode is on to avoid confusion about why your settings are not being respected.
+* Fixed: Correctly load admin JS.
+* Fixed: Improve coding standards across plugin and introduce continuous integration linting against the WordPress coding standards. Update code to VIP Go coding standards.
+* Developers: Add unit tests accross plugin. Note that when the `WP_TESTS_DOMAIN` constant is set, plugin redirects are disabled. Only set this constant when running the tests.
+* Developers: Deploy plugin from GitHub to WordPress.org using GitHub Actions.
+* Developers: Add various GitHub community files.
+
+= 7.0.1 =
+* Bug fix: Avoid redirect loop when the unrestricted page is set to be the static front page.
+* Bug fix: Fall back to the login screen if the unrestricted page is no longer published.
+
+= 7.0.0 =
+* Feature: WP-CLI support! 🎉 Try `wp rsa` to get started.
+* Feature: Whitelist IPs via the `RSA_IP_WHITELIST` constant.
+* Feature: Use WordPress.org-provided language packs instead of bundled translations.
+* Bug fix: Restrict "virtual pages" and allow them to be used as the unrestricted page, such as with BuddyPress.
+* Bug fix: Hide settings properly when no published pages exist.
+* Bug fix: Avoid double slashes in asset URLs that can lead to 404 errors.
+
+= 6.2.1 =
+* Bug fix: Don't redirect logged-in users viewing the site in a single site install.
+
+= 6.2.0 =
+* **Functionality change:** Check user's role on a site in multisite before granting permission.
+* Feature: Alter or restore previous user permission checking with the `restricted_site_access_user_can_access` filter.
+* Avoid a fatal due to differing parameter counts for the `restricted_site_access_is_restricted` filter.
 
 = 6.1.0 =
 * Correct a PHP notice when running PHP >= 7.1.
@@ -166,6 +237,12 @@ Drops support for versions of WordPress prior to 3.5.
 This update improves performance, refines the user interface, and adds support for showing restricted visitors a specific page. Please be advised that this udpate is specifically designed for WordPress 3.2+, and like WordPress 3.2, <strong>no longer supports PHP < 5.2.4</strong>.
 
 == Upgrade Notice ==
+
+= 6.2.1 =
+IMPORTANT MULTISITE FUNCTIONALITY CHANGE: User access is now checked against their role on a given site in multisite. To restore previous behavior, use the new restricted_site_access_user_can_access filter.
+
+= 6.2.0 =
+IMPORTANT MULTISITE FUNCTIONALITY CHANGE: User access is now checked against their role on a given site in multisite. To restore previous behavior, use the new restricted_site_access_user_can_access filter.
 
 = 6.1.0 =
 * Important: version 6.1 improves testing visitors for allowed IP addresses ("Unrestricted IP addresses"). We recommend testing IP based restrictions after updating.
