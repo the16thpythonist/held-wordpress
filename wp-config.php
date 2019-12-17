@@ -32,7 +32,7 @@ $CFG_VARS = [
     'DB_PASSWORD'   => 'WPHELD_DB_PASSWORD',
     'DB_HOST'       => 'WPHELD_DB_HOST',
     // WORDPRESS SPECIFIC
-    'WP_DEBUG'      => 'WPHELD_WP_DEBUG',
+    'WP_DEBUG'      => true,//'WPHELD_WP_DEBUG',
     'WP_HOME'       => 'WPHELD_WP_HOME',
     'WP_SITEURL'    => 'WPHELD_WP_SITEURL',
     // ENCRYPTION SPECIFIC
